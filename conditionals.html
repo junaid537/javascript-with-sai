@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(1=='1');
+        //2
+        let x=4;
+        if(x>=10 && x%2==0){console.log(x);}
+        //3
+        let output=(x%2==0)?'even':'odd';
+        console.log(output);
+        //4
+        if(x===1)console.log('sunday');
+        else if(x===2)console.log('monday');
+        else if(x===3)console.log('tues');
+        else if(x===4)console.log('wed');
+        else if(x===5)console.log('thurs');
+        else if(x===6)console.log('fri');
+        else if(x===7)console.log('sat');
+        //5 ---using switch
+
+        switch(x){
+            case 1:document.write('sunday');
+                    break;
+            case 2:document.write('monday');
+            break;
+            case 3:document.write('tuesday');
+            break;
+
+            case 4:document.write('wednesday');
+            break;
+
+            case 5:document.write('thursday');
+            break;
+
+            case 6:document.write('friday');
+            break;
+
+            case 7:document.write('satday');
+            break;
+
+        }
+    </script>
+</body>
+</html>

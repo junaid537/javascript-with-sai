@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        1.
+        Function Declaration(FD) and Function Expresson(FE)
+        FD has hoisting , FE has no hoisting.
+        FE uses variable assignment ,FD uses function-name
+        
+
+        2..
+        Arrow function
+       
+        const  variable-name=()=>{
+            
+        }
+        if only single param , no need of parantheses.
+        if only single line of code in body no need of flower brackets and no need of return keyword , automatically returns
+        */
+
+
+       //3
+       function add(a,b){
+            const sum=a+b;
+            return sum;
+       }
+
+       //4...
+       const mul=function(a,b){
+            return a*b;
+       }
+
+       //5..
+       const sub=(a,b)=>a-b;
+
+       //6..
+       function reverseString(str) {
+             return str.split('').reverse().join('')
+            
+            }
+            console.log(reverseString('junaid'));
+
+    </script>
+</body>
+</html>

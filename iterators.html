@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1
+        let arr=[2,4,6,8,10];
+        let newarr= arr.map(num=>num*num);
+        document.write(newarr + '<br>');
+
+
+        //2
+        let arr1= [1, "two", 3, "four", 5, "Six", 7, "Eight", 9, "Ten"];
+
+        function filter_list(l) {
+            return l.filter(function(x){ return typeof x === "number" });
+        }
+
+        document.write(filter_list(arr1)+'<br>');
+
+        //3
+        arr2=[1, 3, 5, 7, 9]
+        let sum=arr2.reduce((accumulator,currentValue)=>accumulator+currentValue);
+        document.write(sum);
+
+            /*syntax of reduce
+            
+            reduce(callback function with 2 paramenters , initial value of accumulator)
+            reduce((accumulator,currentvalue)=>{return accumulator+currentvalue},0);
+            */
+
+
+
+
+
+    </script>
+</body>
+</html>

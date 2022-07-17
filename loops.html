@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        (1)              */
+        let arr=[1,2,3,4,5]
+        for(let i=arr.length-1;i>=0;i--)
+        {
+            document.write('<br>'+arr[i]);
+        }
+        
+        
+        
+        //(2)
+        /*for...of does not work with objects (non iterables), Then how do we loop over keys and values of an object? And the answer is for...in loop.
+        This for (..of) statement lets you loop over the data structures that are iterable such as Arrays, Strings,
+         Maps, Node Lists, and more. It calls a custom iteration hook with instructions to execute on the value of each 
+         property of the object.
+
+        The JavaScript for (..in) statement loops through the enumerable properties of an object. The loop will iterate over all enumerable properties of the object itself and those the object inherits from its constructor’s prototype.
+        Use for-in for objects
+
+
+        Use for-of for strings and arrays
+        Use for-in for objects
+*/
+        mystring="This is my string";
+        myarr=[1,2,3]
+
+        for(el of mystring)document.write(el+'<br>');
+
+        for(el of myarr)document.write(el+'<br>');
+
+
+        /*using for of for objects*/
+        let obj={
+            name:'juanid',
+            company:'bc',
+            id:8989
+        }
+        for (el in obj){
+            document.write(el+':'+obj[el]);
+            document.write('<br>');
+        }
+        
+        
+        
+        
+
+        
+    </script>
+</body>
+</html>

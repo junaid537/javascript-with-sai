@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        -----1
+        Array is passed by reference to a function
+        when array is passed as argument , variable memory address is passed and any changes done(on array) in function 
+        is done on memory actually
+        */
+       let a=['hello','bye','tata'];
+       function change(arr){
+            arr[0]='hi';
+            return arr;
+       }
+       document.write(change(a));
+
+       //2
+       document.write('<br>');
+       document.write(a.slice(0));
+
+       /*
+
+            There are at least 6 (!) ways to clone an array:
+
+            loop
+            slice
+            Array.from()
+            concat
+            spread operator (FASTEST)
+            map */
+
+
+       //3
+       /*
+                1)splice(index u want to insert,how many u want to delete,insertions followed by commas)
+                splice(start)
+                splice(start, deleteCount)
+                splice(start, deleteCount, item1)
+                splice(start, deleteCount, item1, item2, itemN)
+       */     
+
+       let b=[1,2,3,4,5]
+       let removed=b.splice(1,2,33);
+       document.write('<br>'+b+"<br>"+removed);
+
+
+                 /*-----------2)slice used to clone a part of array or entire array
+                3)shift deletes first element
+                4)unshifts adds element at first position
+                5)pop deletes last element
+                */
+               //shift------returns the deleted element
+               const arr=['mjik','sai','ak','gp','ng']
+               let rm=arr.shift();
+               document.write('<br>'+ arr + '<br>'+rm);
+
+               //unshift-------returns the new  length of array
+               const arr1=['mjik','sai','ak','gp','ng']
+               let rm1=arr1.unshift('ramu');
+               document.write('<br>'+ arr1 + '<br>'+rm1);
+
+               //pop-----------returns last deleted element
+               const arr2=['mjik','sai','ak','gp','ng']
+               let rm2=arr2.pop();
+               document.write('<br>'+ arr2 + '<br>'+rm2);
+
+    </script>
+
+</body>
+</html>

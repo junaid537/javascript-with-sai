@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    function myFilter(my_array, callback){
+        //Enter your code here
+        let result=[];
+       for(let n of my_array){
+           if(callback(n)){
+               result.push(n) ;
+           }
+       }
+      return result;
+      
+      
+    }
+    
+    function processData(inputArray) {
+        //In blank write anonymous function, which takes one parameter and returns true if its even or false if its odd.
+        console.log(myFilter(inputArray, (n)=>{if(n%2==0)return true;else return false;}));   
+    } 
+    
+    process.stdin.resume();
+    process.stdin.setEncoding("ascii");
+    _input = "";
+    process.stdin.on("data", function (input) {
+        _input += input;
+    });
+    
+    process.stdin.on("end", function () {
+       processData(_input.split(' ').map(num => Number(num)));
+    });
+</body>
+</html>

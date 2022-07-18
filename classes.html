@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // program to implement queue data structure
+
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+    
+    // add element to the queue
+    enqueue(element) {
+        return this.items.push(element);
+    }
+    
+    // remove element from the queue
+    dequeue() {
+        if(this.items.length > 0) {
+            return this.items.shift();
+        }
+    }
+    
+    // view the last element
+    rear() {
+        return this.items[this.items.length - 1];
+    }
+
+    front(){
+        return this.items[0];
+    }
+
+    // check if the queue is empty
+    isEmpty(){
+       return this.items.length == 0;
+    }
+   
+ 
+    // empty the queue
+    clear(){
+        this.items = [];
+    }
+    // the size of the queue
+    size(){
+        return this.items.length;
+    }
+}
+
+let queue = new Queue();
+queue.enqueue(10);
+queue.enqueue(11);
+queue.enqueue(22);
+queue.enqueue(44);
+queue.enqueue(66);
+console.log(queue.items);//[10,11,12,44,66]
+
+queue.dequeue();
+console.log(queue.items);//[11,12,44,66]
+
+console.log(queue.rear());//66
+
+console.log(queue.isEmpty());//false
+
+console.log(queue.size());//4
+
+queue.clear();
+console.log(queue.items);//[]
+
+
+
+
+/*-------------------instanceof operator-----------------------
+
+
+The following shows the syntax of the instanceof operator:
+
+object instanceof contructor
+In this syntax:
+
+object is the object to test.
+constructor is a function to test against.
+*/
+
+function Person(name) {
+  this.name = name;
+}
+
+let p1 = new Person('John');
+
+console.log(p1 instanceof Person); // true
+
+//It returns true because the Person.prototype appears on the prototype chain of the p1 object. 
+//The prototype chain of the p1 is the link between p1, Person.prototype, and Object.prototype
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1
+        function f(obj){
+            console.log(obj);
+        }
+
+        let car={
+            model:'mercedes',
+            'car type':'racing',
+            'max-speed':500
+        }
+        f(car);
+        //2
+        /*
+        let x={a:1,b:2};
+        */
+        let x={a:1,b:2};
+        delete(x.a);
+        console.log(x);
+        let y=x;
+        //3
+        y.b=7;
+        console.log(y);
+        console.log(x);//objects are pass by reference
+
+        //4
+        const obj4={p:1,q:2};
+
+        const objnew=Object.assign({},obj4);//or using spread operator--->    const objnew={...obj4};
+
+        console.log(objnew);
+        document.write(obj4===objnew);//false
+        document.write(Object.is(obj4,objnew));//false
+        //editing objnew
+        objnew.p=9;
+        console.log(obj4);//no change
+        console.log(objnew);
+       //But its only shallow copy
+       //proving shallow copy:-
+       const old={p:2,q:{s:3}};
+       const naya=Object.assign({},old);
+       //deep changes made in 'old' causes to 'naya' also
+       old.q.s=7;
+        console.log(naya);//naya and old both are ====> const old={p:2,q:{s:7}};
+
+         //FOR DEEP COPY ---------------->USE JSON.parse(JSON.stringify(old))
+         const deepClone=JSON.parse(JSON.stringify(old));
+         old.q.s=20;
+         console.log(old);  //{p:2,q:{s:20}};
+
+         console.log(deepClone);  //{p:2,q:{s:7}};
+
+
+
+
+        //5
+
+        /*
+        Referential equality:
+        if pointing to same memory address:  ==,===,Object.is()
+        */
+       obj1={p:1};
+       obj2={p:1};
+
+       console.log(obj1==obj2);
+       console.log(obj1===obj2);
+       console.log(Object.is(obj1,obj2));
+
+       
+       let obj3=obj1;
+       console.log(obj1==obj3);
+       console.log(obj1===obj3);
+       console.log(Object.is(obj1,obj3));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
